@@ -1,0 +1,124 @@
+.station-detail-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .station-left {
+    flex: 2;
+  }
+  
+  .station-right {
+    flex: 1;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  /* Sección Izquierda */
+  .station-title {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .station-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .station-meta {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .station-image-wrapper {
+    margin-bottom: 20px;
+  }
+  
+  .station-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .station-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+  
+  .icon-box img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+  }
+  
+  .station-text {
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  /* Sección Derecha */
+  .map-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
+  .map-wrapper {
+    margin-bottom: 20px;
+  }
+  
+  .map-image {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  
+  .station-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .action-button {
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .action-button:hover {
+    background-color: #555;
+  }
+  
+  .station-footer-text {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Loader */
+  .station-loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 1rem;
+    color: #333;
+  }
+  

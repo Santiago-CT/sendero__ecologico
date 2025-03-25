@@ -1,0 +1,124 @@
+/* src/components/Pages/ManageStations.css */
+.manage-stations-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.manage-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.manage-content {
+  display: flex;
+  gap: 20px;
+}
+
+/* Columna Izquierda: Lista de Estaciones */
+.stations-list {
+  flex: 2;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.stations-search {
+  margin-bottom: 10px;
+}
+
+.stations-search input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.stations-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.station-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.station-item:hover {
+  background-color: #ececec;
+}
+
+.station-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.station-item-title {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Columna Derecha: Formulario */
+.stations-form {
+  flex: 3;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.stations-form h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-submit {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.form-submit:hover {
+  background-color: #555;
+}
+
+.form-cancel {
+  background-color: #ccc;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form-cancel:hover {
+  background-color: #aaa;
+}

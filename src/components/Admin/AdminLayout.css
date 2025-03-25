@@ -1,0 +1,106 @@
+/* src/components/Admin/AdminLayout.css */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Barra lateral */
+  .admin-sidebar {
+    flex: 0 0 220px;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .sidebar-title {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .admin-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .admin-sidebar nav ul li {
+    margin-bottom: 10px;
+  }
+  
+  .admin-sidebar a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .admin-sidebar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Contenido principal */
+  .admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Encabezado admin */
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+  }
+  
+  .profile-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .profile-name {
+    font-weight: bold;
+  }
+  
+  .profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Menú desplegable al pasar el mouse */
+  .profile-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-menu button {
+    background-color: transparent;
+    border: none;
+    padding: 6px 0;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .profile-menu button:hover {
+    background-color: #eee;
+  }
+  
+  /* Contenido de la sección admin */
+  .admin-content {
+    padding: 20px;
+    background-color: #fff;
+    flex: 1;
+  }
+  

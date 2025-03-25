@@ -1,0 +1,126 @@
+.mainContainer {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Sección Hero */
+  .heroSection {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('https://via.placeholder.com/1200x400?text=Fondo+Hero'); /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 40px;
+  }
+  
+  .heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(168, 213, 186, 0.6); /* Overlay en verde pastel */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+  }
+  
+  .heroButton {
+    background-color: #fff;
+    color: #A8D5BA;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+  
+  /* Sección de Estaciones */
+  .stationsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px 40px;
+  }
+  
+  .stationCard {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .stationImage {
+    width: 40%;
+    object-fit: cover;
+  }
+  
+  .stationInfo {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .stationTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .stationText {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    color: #555;
+  }
+  
+  .stationActions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .buttonPrimary {
+    background-color: #A8D5BA;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .buttonSecondary {
+    background-color: #76b893; /* Verde pastel ligeramente más oscuro */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Pie de Página */
+  .footerSection {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    color: #333;
+  }
+  

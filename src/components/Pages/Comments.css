@@ -1,0 +1,136 @@
+/* Contenedor principal: divide la sección principal y el sidebar */
+.comments-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  /* Sección principal (comentarios) */
+  .comments-main {
+    flex: 2; /* ocupa 2 partes */
+  }
+  
+  .comments-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+  }
+  
+  .login-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  
+  .login-warning p {
+    margin: 0;
+  }
+  
+  /* Formulario para nuevo comentario */
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .comment-textarea {
+    resize: vertical;
+    min-height: 60px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .comment-button {
+    align-self: flex-end;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Lista de comentarios */
+  .comment-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .comment-item {
+    display: flex;
+    gap: 10px;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .comment-avatar .avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .comment-content-wrapper {
+    flex: 1;
+  }
+  
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  
+  .comment-username {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .comment-date {
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  .comment-text {
+    margin: 0;
+    color: #444;
+    font-size: 0.95rem;
+  }
+  
+  /* Sección lateral (sidebar) */
+  .comments-sidebar {
+    flex: 1; /* ocupa 1 parte */
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 4px;
+    height: fit-content;
+  }
+  
+  .sidebar-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-list li {
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
