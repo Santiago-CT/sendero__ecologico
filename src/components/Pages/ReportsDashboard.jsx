@@ -3,61 +3,55 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ReportsDashboard.css';
 
-function ReportsDashboard() {
-  // Ejemplo de estados para distintas métricas o datos
-  const [chartData, setChartData] = useState([]);
+const ReportsDashboard = () => {
+  const [salesByRep, setSalesByRep] = useState([]);
   const [funnelData, setFunnelData] = useState([]);
   const [pipelineData, setPipelineData] = useState([]);
   const [selectedReport, setSelectedReport] = useState('default');
 
-  // KPIs de ejemplo
-  const [kpiMonthlyGoal, setKpiMonthlyGoal] = useState('6.2M');
-  const [kpiConversion, setKpiConversion] = useState('27%');
-  const [kpiWonDealsValue, setKpiWonDealsValue] = useState('8,100');
+  // KPIs (estos podrían provenir de tu backend o calcularse a partir de los datos)
+  const [kpiMonthlyGoal, setKpiMonthlyGoal] = useState(null);
+  const [kpiConversion, setKpiConversion] = useState(null);
+  const [kpiWonDealsValue, setKpiWonDealsValue] = useState(null);
 
   useEffect(() => {
-    // Llamadas a la API para cargar datos
-    // Ajusta las URLs a tu backend real
+    // Cargar ventas por representante
     axios.get('http://localhost:4000/api/reports/salesByRep')
-      .then(response => {
-        setChartData(response.data);
-      })
-      .catch(error => {
-        console.error('Error al obtener salesByRep:', error);
-      });
+      .then(response => setSalesByRep(response.data))
+      .catch(error => console.error('Error al obtener salesByRep:', error));
 
+    // Cargar datos del funnel
     axios.get('http://localhost:4000/api/reports/funnel')
-      .then(response => {
-        setFunnelData(response.data);
-      })
-      .catch(error => {
-        console.error('Error al obtener funnel:', error);
-      });
+      .then(response => setFunnelData(response.data))
+      .catch(error => console.error('Error al obtener funnel:', error));
 
+    // Cargar datos del pipeline
     axios.get('http://localhost:4000/api/reports/pipeline')
-      .then(response => {
-        setPipelineData(response.data);
-      })
-      .catch(error => {
-        console.error('Error al obtener pipeline:', error);
-      });
+      .then(response => setPipelineData(response.data))
+      .catch(error => console.error('Error al obtener pipeline:', error));
 
-    // Podrías setear KPIs desde la API también
-    // e.g. setKpiMonthlyGoal(...) etc.
+    // Opcional: cargar KPIs desde el backend
+    axios.get('http://localhost:4000/api/reports/kpis')
+      .then(response => {
+        const { monthlyGoal, conversion, wonDealsValue } = response.data;
+        setKpiMonthlyGoal(monthlyGoal);
+        setKpiConversion(conversion);
+        setKpiWonDealsValue(wonDealsValue);
+      })
+      .catch(error => console.error('Error al obtener KPIs:', error));
   }, []);
 
-  // Maneja el cambio del combo de reportes
   const handleReportChange = (e) => {
     setSelectedReport(e.target.value);
-    // Podrías disparar otra llamada a la API según el reporte
+    // Puedes disparar una nueva llamada a la API según el reporte seleccionado
   };
 
   const handleGenerateReport = () => {
-    // Lógica para generar o descargar el reporte seleccionado
     if (selectedReport === 'default') {
       alert('Selecciona un reporte');
       return;
     }
+    // Lógica para generar o descargar el reporte
     alert(`Generando reporte: ${selectedReport}`);
   };
 
@@ -65,45 +59,45 @@ function ReportsDashboard() {
     <div className="reports-dashboard-container">
       <h2 className="reports-title">Generación de Reportes</h2>
 
-      {/* Sección de KPIs */}
+      {/* KPIs */}
       <div className="kpi-cards">
         <div className="kpi-card">
           <h3>Monthly Goal</h3>
-          <p>{kpiMonthlyGoal}</p>
+          <p>{kpiMonthlyGoal || 'Cargando...'}</p>
         </div>
         <div className="kpi-card">
           <h3>Conversion</h3>
-          <p>{kpiConversion}</p>
+          <p>{kpiConversion || 'Cargando...'}</p>
         </div>
         <div className="kpi-card">
           <h3>Value of Won Deals</h3>
-          <p>{kpiWonDealsValue}</p>
+          <p>{kpiWonDealsValue || 'Cargando...'}</p>
         </div>
       </div>
 
-      {/* Sección de Gráficas (Placeholder) */}
+      {/* Gráficas */}
       <div className="charts-section">
         <div className="chart-box">
           <h4>Sales by Rep</h4>
           <div className="chart-placeholder">
-            (Bar Chart Placeholder)
+            {/* Aquí integrarías la gráfica, por ejemplo con Chart.js */}
+            (Gráfica de barras)
           </div>
         </div>
         <div className="chart-box">
           <h4>Funnel Chart</h4>
           <div className="chart-placeholder">
-            (Funnel Chart Placeholder)
+            (Gráfica de embudo)
           </div>
-          <p>Conversion: {kpiConversion}</p>
         </div>
       </div>
 
-      {/* Pipeline y combo de reportes */}
+      {/* Pipeline y selección de reportes */}
       <div className="pipeline-section">
         <div className="pipeline-box">
           <h4>Sales Pipeline</h4>
           <div className="pipeline-placeholder">
-            (Pipeline Data Table)
+            (Tabla de datos del pipeline)
           </div>
         </div>
         <div className="combo-box-section">
@@ -119,7 +113,7 @@ function ReportsDashboard() {
         </div>
       </div>
 
-      {/* Ejemplo de tabla de resultados */}
+      {/* Tabla de resultados */}
       <div className="data-table-section">
         <h4>Resultados del Reporte</h4>
         <table className="report-table">
@@ -132,29 +126,19 @@ function ReportsDashboard() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>18</td>
-              <td>John Doe</td>
-              <td>4.2</td>
-              <td>Active</td>
-            </tr>
-            <tr>
-              <td>56</td>
-              <td>Alvin Kamora</td>
-              <td>7.8</td>
-              <td>Inactive</td>
-            </tr>
-            <tr>
-              <td>99</td>
-              <td>Malcom Brown</td>
-              <td>4.5</td>
-              <td>Pending</td>
-            </tr>
+            {pipelineData.map(item => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.nombre}</td>
+                <td>{item.valor}</td>
+                <td>{item.status}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
     </div>
   );
-}
+};
 
 export default ReportsDashboard;

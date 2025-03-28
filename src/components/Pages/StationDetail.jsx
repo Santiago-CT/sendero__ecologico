@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 import './StationDetail.css';
 
-const StationDetail = () => {
-  // Ejemplo: obtener el ID de la estación de la URL (/station/:id)
-  const { id } = useParams();
+// Configuración de un icono personalizado para el marcador (opcional)
+const markerIcon = new L.Icon({
+  iconUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png',
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png',
+  shadowSize: [41, 41]
+});
 
-  // Estado para guardar la información de la estación
+const StationDetail = () => {
+  const { id } = useParams();
   const [station, setStation] = useState(null);
 
   useEffect(() => {
-    // Llamada a la API para obtener la información de la estación según el ID
-    // Ajusta la URL a tu backend real, por ejemplo /api/stations/:id
     axios.get(`http://localhost:4000/api/stations/${id}`)
       .then(response => {
         setStation(response.data);
@@ -30,21 +38,21 @@ const StationDetail = () => {
     );
   }
 
+  // Supongamos que la estación tiene coordenadas (lat, lng)
+  const position = [station.lat || 4.60971, station.lng || -74.08175]; // Valor por defecto, cámbialo según tus datos
+
   return (
     <div className="station-detail-container">
-      {/* Columna Izquierda: Imagen, título, descripción, íconos */}
       <div className="station-left">
         <h2 className="station-title">
           Información Estación {station.idEstacion || id}
         </h2>
         <h3 className="station-subtitle">
-          {station.nombre} 
+          {station.nombre}
         </h3>
         <p className="station-meta">
           {station.descripcion || 'Manejo de Residuos Sólidos'}
         </p>
-
-        {/* Imagen principal */}
         <div className="station-image-wrapper">
           <img
             src="https://via.placeholder.com/400x200"
@@ -52,8 +60,6 @@ const StationDetail = () => {
             className="station-image"
           />
         </div>
-
-        {/* Sección de íconos (opcional) */}
         <div className="station-icons">
           <div className="icon-box">
             <img src="https://via.placeholder.com/40" alt="Icon 1" />
@@ -72,28 +78,27 @@ const StationDetail = () => {
             <p>Icon Name</p>
           </div>
         </div>
-
-        {/* Texto adicional */}
         <div className="station-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia, 
-            urna sit amet dictum varius, odio metus bibendum velit, non posuere odio 
-            lorem sed justo.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia, urna sit amet dictum varius, odio metus bibendum velit, non posuere odio lorem sed justo.
           </p>
         </div>
       </div>
 
-      {/* Columna Derecha: Mapa, botones (Especies, Comentar, Ver información) */}
       <div className="station-right">
         <h3 className="map-title">Ver ubicación</h3>
         <div className="map-wrapper">
-          {/* Aquí podrías usar un mapa real con Leaflet o Google Maps.
-              Por ahora, un placeholder: */}
-          <img
-            src="https://via.placeholder.com/300x300?text=Mapa+Estación"
-            alt="Mapa Estación"
-            className="map-image"
-          />
+          <MapContainer center={position} zoom={13} style={{ height: '300px', width: '100%' }}>
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={position} icon={markerIcon}>
+              <Popup>
+                {station.nombre} <br /> {station.descripcion}
+              </Popup>
+            </Marker>
+          </MapContainer>
         </div>
 
         <div className="station-actions">
@@ -108,11 +113,9 @@ const StationDetail = () => {
           </Link>
         </div>
 
-        {/* Texto inferior o descripción adicional */}
         <div className="station-footer-text">
           <p>
-            Texto adicional o breve reseña. Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit. 
+            Texto adicional o breve reseña. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
       </div>
