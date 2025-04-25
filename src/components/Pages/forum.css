@@ -1,0 +1,174 @@
+/* Estilos para la página del Foro */
+.forumContainer {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Cabecera del Foro */
+  .forumHeader {
+    background-color: #A8D5BA;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .forumHeaderContent {
+    color: #333;
+  }
+  
+  .forumHeaderContent h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .forumHeaderContent p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Mensaje de error */
+  .errorMessage {
+    background-color: #fff0f0;
+    border: 1px solid #ffcccc;
+    color: #cc0000;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Sección de Acciones */
+  .forumActions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .createThreadButton {
+    background-color: #76b893;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .createThreadButton:hover {
+    background-color: #5a9e78;
+  }
+  
+  .createThreadButton:disabled {
+    background-color: #a0c0b0;
+    cursor: not-allowed;
+  }
+  
+  /* Sección para crear nuevo tema */
+  .createThreadSection {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  /* Contenedor de hilos */
+  .threadsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  /* Indicador de carga */
+  .loadingIndicator {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loadingIndicator p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  
+  .noThreads {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    color: #666;
+  }
+  
+  /* Estilos para cada hilo de discusión */
+  .threadCard {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .threadHeader {
+    padding: 15px 20px;
+    background-color: #f0f9f4;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .threadTitle {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .threadMeta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .threadContent {
+    padding: 20px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  /* Estilos para las respuestas */
+  .threadReplies {
+    border-top: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+  }
+  
+  .replyHeader {
+    color: #666;
+    font-size: 1.1rem;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .replyItem {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .replyItem:last-child {
+    border-bottom: none;
+  }
+  
+  .replyMeta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 8px;}

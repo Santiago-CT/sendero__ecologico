@@ -10,6 +10,7 @@ import StationDetail from './components/Pages/StationDetail';
 import Comments from './components/Pages/Comments';
 import SpeciesList from './components/Pages/SpeciesList';
 import Filter from './components/Pages/Filter';
+import FAQPage from './components/Pages/FAQPage';
 
 // Componentes de área de administración
 import AdminRoute from './components/Routes/AdminRoute';
@@ -28,13 +29,15 @@ function AppWrapper() {
       {!isAdminRoute && <Header />}
       <Routes>
         {/* Rutas públicas */}
+        
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/station/:id" element={<StationDetail />} />
         <Route path="/comments" element={<Comments />} />
         <Route path="/species" element={<SpeciesList />} />
         <Route path="/filter" element={<Filter />} />
-
+        <Route path="/faq" element={<FAQPage />} />
+        
         {/* Rutas de administración protegidas */}
         <Route
           path="/admin/*"

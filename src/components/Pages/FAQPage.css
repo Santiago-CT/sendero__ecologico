@@ -1,0 +1,173 @@
+.faqPageContainer {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.faqHeader {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #A8D5BA;
+  text-align: center;
+  position: relative;
+}
+
+.backLink {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #76b893;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.faqPageTitle {
+  color: #333;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.faqPageMain {
+  flex: 1;
+}
+
+.faqContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faqCategory {
+  margin-bottom: 40px;
+}
+
+.categoryTitle {
+  color: #76b893;
+  border-bottom: 2px solid #A8D5BA;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+.faqItem {
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.faqQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.faqQuestion:hover {
+  background-color: #f1f9f3;
+}
+
+.faqQuestion.active {
+  background-color: #e8f5ed;
+}
+
+.faqQuestion h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.faqToggle {
+  font-size: 1.5rem;
+  color: #76b893;
+  font-weight: bold;
+}
+
+.faqAnswer {
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  line-height: 1.6;
+  color: #555;
+}
+
+.loadingContainer, 
+.errorContainer {
+  text-align: center;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 30px auto;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.errorContainer {
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+}
+
+.offlineAlert {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff3cd;
+  color: #856404;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  border: 1px solid #ffeeba;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faqFooter {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+  color: #333;
+}
+
+/* Media queries para diseño responsive */
+@media (max-width: 768px) {
+  .faqPageContainer {
+    padding: 15px;
+  }
+  
+  .faqPageTitle {
+    font-size: 1.8rem;
+  }
+  
+  .backLink {
+    position: relative;
+    display: block;
+    top: auto;
+    transform: none;
+    margin-bottom: 15px;
+  }
+  
+  .faqHeader {
+    text-align: center;
+  }
+  
+  .faqQuestion h3 {
+    font-size: 1rem;
+  }
+  
+  .categoryTitle {
+    font-size: 1.4rem;
+  }
+}

@@ -15,12 +15,12 @@ const Home = () => {
           <button className="heroButton">Explorar Estaciones</button>
         </div>
       </section>
-
+      
       {/* Sección de Estaciones */}
       <section className="stationsContainer">
         <div className="stationCard">
           <img
-            src="https://via.placeholder.com/600x300"
+            src="/api/placeholder/600/300"
             alt="Estación 4"
             className="stationImage"
           />
@@ -35,10 +35,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-
+        
         <div className="stationCard">
           <img
-            src="https://via.placeholder.com/600x300"
+            src="/api/placeholder/600/300"
             alt="Estación 5"
             className="stationImage"
           />
@@ -53,10 +53,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-
+        
         <div className="stationCard">
           <img
-            src="https://via.placeholder.com/600x300"
+            src="/api/placeholder/600/300"
             alt="Estación 6"
             className="stationImage"
           />
@@ -73,14 +73,24 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Sección de enlace a FAQ */}
+      <section className="faqLinkSection">
+        <div className="faqLinkContainer">
+          <h2>¿Tienes preguntas sobre el sendero?</h2>
+          <p>Encuentra respuestas a todas tus dudas en nuestra sección de preguntas frecuentes.</p>
+          <Link to="/faq" className="faqButton">Ver Preguntas Frecuentes</Link>
+        </div>
+      </section>
+      
       {/* Pie de Página */}
       <section className="footerSection">
         <p>© 2025 Universidad de los Llanos – Campus Barcelona</p>
         <p>
-          <Link to="/admin">Admin</Link> | 
-          <Link to="/privacy">Política de Privacidad</Link> | 
-          <Link to="/terms">Términos y Condiciones</Link> | 
-          <Link to="/accessibility">Accesibilidad</Link>
+          <Link to="/admin">Admin</Link> |
+          <Link to="/privacy">Política de Privacidad</Link> |
+          <Link to="/terms">Términos y Condiciones</Link> |
+          <Link to="/accessibility">Accesibilidad</Link> |
+          <Link to="/faq">FAQ</Link>
         </p>
       </section>
     </main>

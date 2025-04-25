@@ -1,126 +1,195 @@
 .mainContainer {
-    font-family: Arial, sans-serif;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  
-  /* Sección Hero */
-  .heroSection {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-image: url('https://via.placeholder.com/1200x400?text=Fondo+Hero'); /* Reemplaza con tu imagen */
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 40px;
-  }
-  
-  .heroOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(168, 213, 186, 0.6); /* Overlay en verde pastel */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-    padding: 0 20px;
-  }
-  
-  .heroTitle {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .heroSubtitle {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 20px;
-    line-height: 1.5;
-  }
-  
-  .heroButton {
-    background-color: #fff;
-    color: #A8D5BA;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 4px;
-  }
-  
-  /* Sección de Estaciones */
-  .stationsContainer {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 0 20px 40px;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Sección Hero */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url('https://placehold.co/1200x400');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(168, 213, 186, 0.6); /* Overlay en verde pastel */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  line-height: 1.5;
+}
+
+.heroButton {
+  background-color: #fff;
+  color: #A8D5BA;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+/* Sección de Estaciones */
+.stationsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 0 20px 40px;
+}
+
+.stationCard {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stationImage {
+  width: 40%;
+  object-fit: cover;
+}
+
+.stationInfo {
+  padding: 20px;
+  flex: 1;
+}
+
+.stationTitle {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.stationText {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.stationActions {
+  display: flex;
+  gap: 10px;
+}
+
+.buttonPrimary {
+  background-color: #A8D5BA;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.buttonSecondary {
+  background-color: #76b893; /* Verde pastel ligeramente más oscuro */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Sección de enlace a FAQ - NUEVO */
+.faqLinkSection {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+.faqLinkContainer {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faqLinkContainer h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.faqLinkContainer p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.faqButton {
+  display: inline-block;
+  background-color: #A8D5BA;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.faqButton:hover {
+  background-color: #76b893;
+}
+
+/* Media queries para diseño responsive */
+@media (max-width: 768px) {
   .stationCard {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    overflow: hidden;
+    flex-direction: column;
   }
   
   .stationImage {
-    width: 40%;
-    object-fit: cover;
+    width: 100%;
+    height: 200px;
   }
   
-  .stationInfo {
-    padding: 20px;
-    flex: 1;
+  .heroTitle {
+    font-size: 2rem;
   }
   
-  .stationTitle {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .stationText {
+  .heroSubtitle {
     font-size: 1rem;
-    margin-bottom: 20px;
-    line-height: 1.4;
-    color: #555;
   }
-  
-  .stationActions {
-    display: flex;
-    gap: 10px;
+
+  .faqLinkSection {
+    padding: 20px;
+    margin: 15px;
   }
-  
-  .buttonPrimary {
-    background-color: #A8D5BA;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
+
+  .faqLinkContainer h2 {
+    font-size: 1.5rem;
   }
-  
-  .buttonSecondary {
-    background-color: #76b893; /* Verde pastel ligeramente más oscuro */
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  /* Pie de Página */
-  .footerSection {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px 0;
-    border-top: 1px solid #ccc;
-    color: #333;
-  }
-  
+}
+
+/* Pie de Página */
+.footerSection {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+  color: #333;
+}
